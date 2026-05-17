@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "itemscooldown",
+  "version": "${version}",
+  "name": "ItemsCooldown",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/itemscooldown/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "me.FrostFizzie.itemscooldown.client.ItemscooldownClient"
+    ],
+    "main": [
+      "me.FrostFizzie.itemscooldown.Itemscooldown"
+    ]
+  },
+  "mixins": [
+    "itemscooldown.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
