@@ -39,7 +39,7 @@ public abstract class MixinGuiGraphics {
                 (int) ((i + 1) / scale),
                 (int) ((j + 1) / scale),
                 Color.decode(Config.displayColor).getRGB(),
-                false);
+                true);
         pose.popMatrix();
 
     }
