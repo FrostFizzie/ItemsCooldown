@@ -1,0 +1,12 @@
+{
+  "itemscooldown.tooltipoptions.never": "Never",
+  "itemscooldown.tooltipoptions.control": "Control",
+  "itemscooldown.tooltipoptions.always": "Always",
+  "itemscooldown.screen.config.title": "Configuration",
+  "itemscooldown.screen.config.main.title": "Main",
+  "itemscooldown.screen.config.main.color": "Color of Display",
+  "itemscooldown.screen.config.main.tooltip": "Show on Tooltips",
+  "itemscooldown.screen.config.main.tooltip.never": "Cooldown timer will never be shown on item tooltip.",
+  "itemscooldown.screen.config.main.tooltip.control": "Cooldown timer will only be shown on item tooltip while control is pressed.",
+  "itemscooldown.screen.config.main.tooltip.always": "Cooldown timer will always be shown on item tooltip."
+}

@@ -15,7 +15,8 @@
     ],
     "main": [
       "me.FrostFizzie.itemscooldown.Itemscooldown"
-    ]
+    ],
+    "modmenu": ["me.FrostFizzie.itemscooldown.Config.ModMenuImpl"]
   },
   "mixins": [
     "itemscooldown.mixins.json"
@@ -24,5 +25,9 @@
     "fabricloader": ">=${loader_version}",
     "fabric-api": "*",
     "minecraft": "${minecraft_version}"
+  },
+  "recommends": {
+    "modmenu": "20.0.2",
+    "yet_another_config_lib_v3": "3.9.6"
   }
 }

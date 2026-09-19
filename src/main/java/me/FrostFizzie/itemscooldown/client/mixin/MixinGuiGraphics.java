@@ -2,7 +2,7 @@ package me.FrostFizzie.itemscooldown.client.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import me.FrostFizzie.itemscooldown.Itemscooldown;
-import me.FrostFizzie.itemscooldown.client.Config.Config;
+import me.FrostFizzie.itemscooldown.Config.Config;
 import me.FrostFizzie.itemscooldown.client.SingleTimeDuration;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -39,7 +39,7 @@ public abstract class MixinGuiGraphics {
                 SingleTimeDuration.formatDuration(cooldownDur / 20f),
                 (int) ((i + 1) / scale),
                 (int) ((j + 1) / scale),
-                Color.decode(Config.displayColor).getRGB(),
+                Config.displayColor.getRGB(),
                 true);
         pose.popMatrix();
 
