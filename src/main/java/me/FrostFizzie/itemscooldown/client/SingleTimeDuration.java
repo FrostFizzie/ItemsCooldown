@@ -26,7 +26,7 @@ public class SingleTimeDuration {
             if (seconds >= unit.seconds) {
                 double value = (double) seconds / unit.seconds;
                 value = unit == TimeUnit.MILLISECOND ? Math.round(value) : Math.round(value * 100.0) / 100.0;
-                return new BigDecimal(value).setScale(2, RoundingMode.HALF_UP).stripTrailingZeros().stripTrailingZeros().toPlainString() + unit.symbol;
+                return new BigDecimal(value).setScale(2, RoundingMode.HALF_UP).stripTrailingZeros().toPlainString() + unit.symbol;
             }
         }
         return "0s";
