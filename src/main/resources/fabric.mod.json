@@ -24,10 +24,8 @@
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric-api": "*",
-    "minecraft": "${minecraft_version}"
-  },
-  "recommends": {
-    "modmenu": "20.0.2",
-    "yet_another_config_lib_v3": "3.9.6"
+    "minecraft": "${minecraft_version}",
+    "modmenu": "21.0.0",
+    "yet_another_config_lib_v3": "3.9.7"
   }
 }
