@@ -2,7 +2,7 @@ package me.FrostFizzie.itemscooldown.client.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import me.FrostFizzie.itemscooldown.Itemscooldown;
-import me.FrostFizzie.itemscooldown.client.Config.Config;
+import me.FrostFizzie.itemscooldown.Config.Config;
 import me.FrostFizzie.itemscooldown.client.SingleTimeDuration;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -29,7 +29,7 @@ public abstract class MixinGuiGraphics {
     @Shadow
     public abstract void text(Font font, @Nullable String str, int x, int y, int color, boolean dropShadow);
 
-    @Inject(method = "itemCooldown", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;fill(Lcom/mojang/blaze3d/pipeline/RenderPipeline;IIIII)V", shift = At.Shift.AFTER))
+    @Inject(method = "itemCooldown", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;fill(Lcom/mojang/renderpearl/api/pipeline/RenderPipeline;IIIII)V", shift = At.Shift.AFTER))
     public void renderItemCooldown(ItemStack itemStack, int i, int j, CallbackInfo ci, @Local(name = "cooldown") float cooldown) {
         pose.pushMatrix();
         float scale = 0.5f;
@@ -39,7 +39,7 @@ public abstract class MixinGuiGraphics {
                 SingleTimeDuration.formatDuration(cooldownDur / 20f),
                 (int) ((i + 1) / scale),
                 (int) ((j + 1) / scale),
-                Color.decode(Config.displayColor).getRGB(),
+                Config.displayColor.getRGB(),
                 true);
         pose.popMatrix();
 
