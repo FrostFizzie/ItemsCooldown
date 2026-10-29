@@ -29,7 +29,7 @@ public abstract class MixinGuiGraphics {
     @Shadow
     public abstract void text(Font font, @Nullable String str, int x, int y, int color, boolean dropShadow);
 
-    @Inject(method = "itemCooldown", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;fill(Lcom/mojang/blaze3d/pipeline/RenderPipeline;IIIII)V", shift = At.Shift.AFTER))
+    @Inject(method = "itemCooldown", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;fill(Lcom/mojang/renderpearl/api/pipeline/RenderPipeline;IIIII)V", shift = At.Shift.AFTER))
     public void renderItemCooldown(ItemStack itemStack, int i, int j, CallbackInfo ci, @Local(name = "cooldown") float cooldown) {
         pose.pushMatrix();
         float scale = 0.5f;
