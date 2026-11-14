@@ -1,7 +1,7 @@
 package me.FrostFizzie.itemscooldown.client;
 
 import me.FrostFizzie.itemscooldown.Itemscooldown;
-import me.FrostFizzie.itemscooldown.client.Config.Config;
+import me.FrostFizzie.itemscooldown.Config.Config;
 import net.minecraft.client.Minecraft;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
@@ -15,11 +15,11 @@ public class ItemscooldownClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         Config.init();
-        ItemTooltipCallback.EVENT.register((stack, tooltipContext, tooltipFlag, components) -> {
+        ItemTooltipCallback.EVENT.register((stack, _, _, components) -> {
             assert client.player != null;
             float cooldown = Itemscooldown.getCooldownTime(stack, 0);
-            if (cooldown > 0 && client.hasControlDown() && Config.displayTooltip) {
-                components.add(Component.literal("Cooldown: " + (int) cooldown).withColor(Color.decode(Config.displayColor).getRGB()));
+            if (cooldown > 0 && ((client.hasControlDown() && Config.displayTooltip == Config.TooltipDisplayOptions.CONTROL) || Config.displayTooltip == Config.TooltipDisplayOptions.ALWAYS)) {
+                components.add(Component.literal("Cooldown: " + (int) cooldown).withColor(Config.displayColor.getRGB()));
             }
         });
     }
